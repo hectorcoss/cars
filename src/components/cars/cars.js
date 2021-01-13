@@ -4,7 +4,6 @@ import useModal from "../../hooks/useModal";
 import Modal from "../modal/modal";
 
 const Cars = () => {
-    const [hasError, setErrors] = useState(false);
     const [cars, setCars] = useState({});
     const [loading, setLoading] = useState(true);
     const {isShowing, toggle} = useModal();
@@ -19,7 +18,6 @@ const Cars = () => {
                 setLoading(false);
             })
             .catch(err => {
-                setErrors(err);
                 setLoading(true);
             });
     }
